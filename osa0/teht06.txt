@@ -1,0 +1,15 @@
+title Save-nappi
+
+note over selain:
+käyttäjä kirjoittaa tekstikenttään viestin.
+käyttäjä painaa save-nappia.
+määritellään headerin Content-type avulla lähetettävän datan tyypiksi JSON
+selain lähettää käyttäjän syöttämän viestin palvelimelle.
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over selain:
+selain lisää viesin notes-listalle.
+selain lataa listan näytölle.
+end note
