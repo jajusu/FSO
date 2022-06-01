@@ -37,7 +37,7 @@ const App = () => {
   const Mostvotes = () =>{
     const max = Math.max.apply(null, votes);
     const index = votes.indexOf(max);
-    console.log("eniten",index); // 👉️ 3
+    console.log("eniten",index);
     return(
       <div>
         <h1>Anecdote with most votes</h1>
