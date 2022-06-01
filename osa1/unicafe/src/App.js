@@ -1,5 +1,4 @@
 import './App.css';
-
 import { useState } from 'react'
 
 const Button = (props) => (
@@ -8,14 +7,26 @@ const Button = (props) => (
   </button>
 )
 
+const Statistics = (props) => {
+  let all=props.good+props.neutral+props.bad;
+  let average=(props.good*1+props.neutral*0+props.bad*-1)/all;
+  let positive=props.good/all*100
+  return (    
+    <div>
+      good {props.good}<br></br>
+      neutral {props.neutral}<br></br>
+      bad {props.bad} <br></br>
+      all {all}<br></br>
+      average {average}<br></br>
+      positive {positive} %
+    </div>
+  )
+}
+
 const App = () => {
-  // save clicks of each button to its own state
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
-  let all=good+neutral+bad;
-  let average=(good*1+neutral*0+bad*-1)/all;
-  let positive=good/all;
 
   return (
     <div>
@@ -24,12 +35,7 @@ const App = () => {
       <Button handleClick={() => setNeutral(neutral+1)} text="neutral"/>
       <Button handleClick={() => setBad(bad+1)} text="bad"/>
       <h1>statistics</h1>
-      good {good} <br></br>
-      neutral {neutral} <br></br>
-      bad {bad}<br></br>
-      all {all}<br></br>
-      average {average} <br></br>
-      positive {positive} %
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   )
 }
