@@ -11,16 +11,23 @@ const Statistics = (props) => {
   let all=props.good+props.neutral+props.bad;
   let average=(props.good*1+props.neutral*0+props.bad*-1)/all;
   let positive=props.good/all*100
-  return (    
-    <div>
-      good {props.good}<br></br>
-      neutral {props.neutral}<br></br>
-      bad {props.bad} <br></br>
-      all {all}<br></br>
-      average {average}<br></br>
-      positive {positive} %
-    </div>
-  )
+  if (all===0){
+    return(
+      <div>No feedback given</div>
+    )
+  }
+  else{
+    return (    
+      <div>
+        good {props.good}<br></br>
+        neutral {props.neutral}<br></br>
+        bad {props.bad} <br></br>
+        all {all}<br></br>
+        average {average}<br></br>
+        positive {positive} %
+      </div>
+    )
+  }
 }
 
 const App = () => {
