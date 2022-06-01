@@ -3,7 +3,7 @@ import React from 'react'
 const Header = (props) => {
   return (
     <div>
-        {props.course}
+        {props.courseName}
     </div>
   )
 }
@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <div>
-      <h1><Header course={course.name}/></h1>
+      <h1><Header courseName={course.name}/></h1>
       <p>
         <Content parts={course.parts}/>
       </p>
